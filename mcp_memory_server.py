@@ -322,7 +322,7 @@ def remember(
 
 def _remember_summary(mm: MemoryManager, content: str, meta: dict) -> str:
     import uuid
-    sid = meta.get("id") or str(uuid.uuid4())[:8]
+    sid = meta.get("id") or str(uuid.uuid4())
     mm.write_summary(
         sid, content, content,
         description=meta.get("description", "summary"),
@@ -488,7 +488,7 @@ def summarise_thread(
     if not description.strip():
         description = "Session summary"
 
-    summary_id = str(uuid.uuid4())[:8]
+    summary_id = str(uuid.uuid4())
     mm.write_summary(summary_id, transcript, summary_text, description,
                      thread_id=thread_id)
     mm.mark_conversations_summarized(message_ids, summary_id)
