@@ -1,0 +1,16 @@
+{
+    "mcpServers": {
+        "agent-memory": {
+            "type": "stdio",
+            "command": "/absolute/path/to/claude-code-mem/.venv/bin/python",
+            "args": [
+                "/absolute/path/to/claude-code-mem/mcp_memory_server.py"
+            ],
+            "env": {
+                "MEMORY_DB_DSN": "postgresql://agent_mcp:agent_mcp_password@localhost:5432/agent_memory",
+                "MEMORY_EMBEDDING_MODEL": "sentence-transformers/paraphrase-mpnet-base-v2",
+                "MEMORY_DEFAULT_THREAD": "claude-code"
+            }
+        }
+    }
+}

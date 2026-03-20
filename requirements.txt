@@ -1,0 +1,5 @@
+psycopg2-binary>=2.9
+pgvector>=0.3
+sentence-transformers>=2.2
+mcp[cli]>=1.0
+openai>=1.0
